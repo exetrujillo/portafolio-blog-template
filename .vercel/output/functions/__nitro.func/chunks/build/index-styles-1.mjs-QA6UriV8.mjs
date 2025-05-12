@@ -1,0 +1,3 @@
+const index_vue_vue_type_style_index_0_scoped_8980a50b_lang = ".portfolio-title[data-v-8980a50b]{background:linear-gradient(135deg,rgba(var(--ui-bg-rgb),.8),rgba(var(--ui-bg-rgb),.95));border-radius:var(--ui-radius);color:var(--ui-primary);display:inline-block;padding:.5rem 1.5rem;position:relative;text-shadow:2px 2px 0 var(--ui-accent)}button[data-v-8980a50b]{transition:all .3s ease}button[data-v-8980a50b]:hover{transform:translateY(-2px)}.rounded-xl[data-v-8980a50b]{transition:transform .5s ease,box-shadow .5s ease}.rounded-xl[data-v-8980a50b]:hover{box-shadow:0 8px 30px rgba(var(--ui-primary-rgb),.15);transform:translateY(-5px)}";
+
+export { index_vue_vue_type_style_index_0_scoped_8980a50b_lang as i };

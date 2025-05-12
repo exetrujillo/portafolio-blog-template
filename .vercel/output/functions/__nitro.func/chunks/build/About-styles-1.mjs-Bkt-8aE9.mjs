@@ -1,0 +1,3 @@
+const About_vue_vue_type_style_index_0_scoped_a712a667_lang = ".about-title[data-v-a712a667]{color:var(--ui-primary);display:inline-block;position:relative;text-shadow:2px 2px 0 var(--ui-accent)}.transition-all[data-v-a712a667],a[data-v-a712a667],button[data-v-a712a667]{transition:all .3s ease}a[data-v-a712a667]:hover,button[data-v-a712a667]:hover{transform:translateY(-2px)}.UCard[data-v-a712a667]{transition:transform .5s ease,box-shadow .5s ease}.UCard[data-v-a712a667]:hover{box-shadow:0 8px 30px rgba(var(--ui-primary-rgb),.15);transform:translateY(-5px)}";
+
+export { About_vue_vue_type_style_index_0_scoped_a712a667_lang as A };
