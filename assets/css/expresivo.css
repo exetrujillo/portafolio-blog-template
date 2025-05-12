@@ -1,0 +1,153 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/* Tema Claro - Paleta Artística */
+:root {
+    /* Colores base para el tema claro - Paleta creativa y expresiva */
+    --ui-bg: #FFFFFF; /* Fondo blanco limpio */
+    --ui-text: #2A2D34; /* Gris oscuro casi negro para texto - Mejor contraste */
+    --ui-primary: #974EC3; /* Violeta vibrante - Color principal de la marca */
+    --ui-primary-rgb: 151, 78, 195;
+    --ui-secondary: #FE7A36; /* Naranja cálido - Complementario perfecto */
+    --ui-secondary-rgb: 254, 122, 54;
+    --ui-accent: #3EB489; /* Verde menta - Color acento para detalles */
+    --ui-accent-rgb: 62, 180, 137;
+    --ui-highlight: #FFC107; /* Amarillo dorado para resaltados de código */
+    --ui-highlight-rgb: 255, 193, 7;
+    --ui-border: #E8E8E8; /* Gris muy claro para bordes sutiles */
+    --ui-radius: 0.5rem;
+
+    /* Bloques de código y sintaxis */
+    --ui-code-block-bg: #F8F9FA; /* Gris pálido para bloques de código */
+    --ui-inline-code-bg: #F0F0F0; /* Gris ligeramente más oscuro para código en línea */
+    --ui-inline-code-text: #7952B3; /* Violeta oscuro para código - Relacionado con el primario */
+}
+
+/* Tema Oscuro - Paleta Artística */
+.dark {
+    /* Colores base para el tema oscuro - Expresivo pero sofisticado */
+    --ui-bg: #161B33; /* Azul marino oscuro - Más suave que negro puro */
+    --ui-text: #F8F9FA; /* Blanco suave para texto */
+    --ui-primary: #BD93F9; /* Violeta más claro y vibrante */
+    --ui-primary-rgb: 189, 147, 249;
+    --ui-secondary: #FF9E64; /* Naranja melocotón brillante */
+    --ui-secondary-rgb: 255, 158, 100;
+    --ui-accent: #50FA7B; /* Verde neón para acentos */
+    --ui-accent-rgb: 80, 250, 123;
+    --ui-highlight: #FFD700; /* Amarillo dorado para resaltados */
+    --ui-highlight-rgb: 255, 215, 0;
+    --ui-border: #2E3559; /* Azul grisáceo oscuro para bordes */
+
+    /* Bloques de código y sintaxis - Modo oscuro */
+    --ui-code-block-bg: #1E2235; /* Azul muy oscuro para bloques de código */
+    --ui-inline-code-bg: #292D44; /* Ligeramente más claro para código en línea */
+    --ui-inline-code-text: #CF9EFF; /* Violeta claro para mejor visibilidad */
+}
+
+/* Estilos para Markdown */
+.prose {
+  /* Estilos generales */
+  color: var(--ui-text);
+}
+
+/* Encabezados */
+.prose h1 {
+  color: var(--ui-primary);
+  font-size: 2.25rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.prose h2 {
+  color: var(--ui-primary);
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.prose h3 {
+  color: var(--ui-primary);
+  font-size: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Listas */
+.prose ul {
+  list-style-type: disc !important;
+  padding-left: 1.5rem !important;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose ol {
+  list-style-type: decimal !important;
+  padding-left: 1.5rem !important;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose li {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  display: list-item !important; /* Asegurar visualización como elemento de lista */
+}
+
+/* Bloques de código */
+.prose pre {
+  /* Usar la variable dedicada para el fondo del bloque de código */
+  background-color: var(--ui-code-block-bg);
+  border-radius: var(--ui-radius);
+  padding: 1rem;
+  overflow-x: auto; /* Mantener desplazamiento horizontal para código ancho */
+  /* Añadir un borde sutil para definición extra */
+  border: 1px solid var(--ui-border);
+}
+
+.prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875rem;
+  background-color: var(--ui-inline-code-bg);
+  color: var(--ui-inline-code-text);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-weight: normal;
+  white-space: nowrap; /* Evitar que el código en línea se divida */
+}
+
+/* Esta regla apunta correctamente al código DENTRO de <pre> y restablece sus estilos */
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  color: inherit; /* Heredar color del resaltado de Shiki */
+  white-space: pre; /* Permitir que el código pre se ajuste o no según el desbordamiento de pre */
+}
+
+/* Párrafos */
+.prose p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.625;
+}
+
+/* Asegurar que los saltos de línea sean claros */
+.prose * + * {
+  margin-top: 0.75em;
+}
+
+/* Enlaces */
+.prose a {
+  color: var(--ui-secondary); /* Usar color secundario para enlaces - Crear contraste */
+  text-decoration: none;
+  border-bottom: 1px solid var(--ui-secondary);
+  transition: all 0.2s ease;
+}
+
+.prose a:hover {
+  color: var(--ui-primary); /* Cambiar a color primario en hover */
+  border-bottom-color: var(--ui-primary);
+}
