@@ -76,9 +76,7 @@ const excerpt = computed(() => {
 
 <style scoped>
 .project-card-link {
-  /* No necesitamos mb-6 aquí si se maneja en el contenedor de la lista */
-  /* Pero si quieres que cada tarjeta tenga su propio margen inferior, puedes añadirlo */
-  margin-bottom: 1.5rem; /* mb-6 */
+  margin-bottom: 0rem;
 }
 
 .project-card-link:hover {

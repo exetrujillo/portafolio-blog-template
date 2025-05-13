@@ -39,12 +39,12 @@ const formattedDate = computed(() => {
   >  
     <div class="article-card-body">  
       <!-- Usamos clases responsive para cambiar el layout según el tamaño de pantalla -->  
-      <div :class="[image ? 'flex-col sm:flex sm:gap-6 sm:items-start' : '']">  
-        <div v-if="image" class="flex-shrink-0 mb-4 sm:mb-0">  
+      <div :class="[image ? 'flex flex-col md:flex-row md:gap-6 md:items-start' : '']">  
+        <div v-if="image" class="flex-shrink-0 mb-4 md:mb-0 w-full md:w-40">  
           <NuxtImg  
             :src="image"  
             :alt="`Imagen principal para ${title}`"  
-            class="article-card-image w-full sm:w-40 h-auto sm:h-35 object-cover rounded-md"  
+            class="article-card-image w-full h-auto object-cover rounded-md"  
             loading="lazy"  
           />  
         </div>  
@@ -80,7 +80,7 @@ const formattedDate = computed(() => {
 
 <style scoped>
 .article-card-link {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0rem;
 }
 
 .article-card-link:hover,

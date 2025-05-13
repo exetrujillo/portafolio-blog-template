@@ -1,35 +1,26 @@
-<!-- components/HeroSection.vue -->
-<script setup lang="ts">
-interface HeroProps {
-  name?: string;
-  title?: string;
-  description?: string;
-  primaryButtonText?: string;
-  primaryButtonLink?: string;
-  secondaryButtonText?: string;
-  secondaryButtonLink?: string;
-  showAvatar?: boolean;
-}
-
-const {
-  name,
-  title,
-  description,
-  primaryButtonText,
-  primaryButtonLink,
-  secondaryButtonText,
-  secondaryButtonLink,
-  showAvatar
-} = withDefaults(defineProps<HeroProps>(), {
-  name: 'Tu Nombre',
-  title: 'Desarrollador Web | Diseñador | Creador',
-  description: 'Bienvenido a mi portafolio personal. Aquí encontrarás mis proyectos, artículos y más información sobre mi trabajo.',
-  primaryButtonText: 'Ver Portafolio',
-  primaryButtonLink: '/portfolio',
-  secondaryButtonText: 'Sobre Mí',
-  secondaryButtonLink: '/about',
-  showAvatar: true,
-});
+<!-- components/HeroSection.vue -->  
+<script setup lang="ts">  
+interface HeroProps {  
+  name?: string;  
+  title?: string;  
+  description?: string;  
+  primaryButtonText?: string;  
+  primaryButtonLink?: string;  
+  secondaryButtonText?: string;  
+  secondaryButtonLink?: string;  
+  showAvatar?: boolean;  
+}  
+  
+const {  
+  name = 'Tu Nombre',  
+  title = 'Desarrollador Web | Diseñador | Creador',  
+  description = 'Bienvenido a mi portafolio personal. Aquí encontrarás mis proyectos, artículos y más información sobre mi trabajo.',  
+  primaryButtonText = 'Ver Portafolio',  
+  primaryButtonLink = '/portfolio',  
+  secondaryButtonText = 'Sobre Mí',  
+  secondaryButtonLink = '/about',  
+  showAvatar = true  
+} = defineProps<HeroProps>();  
 </script>
 
 <template>
@@ -43,13 +34,19 @@ const {
     
     <div class="w-full relative z-10">
       <div class="max-w-5xl mx-auto text-center">
-        <!-- Avatar o logo (condicional) -->
+        <!-- Avatar con NuxtImg -->
         <div v-if="showAvatar" class="avatar-container mb-8 inline-block">
           <div class="avatar-ring p-1 rounded-full bg-gradient-primary">
             <div class="bg-ui-bg rounded-full p-1">
-              <!-- Puedes añadir tu foto o logo aquí -->
-              <div class="w-24 h-24 rounded-full bg-ui-border flex items-center justify-center text-xl font-bold text-ui-primary">
-                {{ name.charAt(0) }}
+              <!-- Reemplazado el placeholder con NuxtImg -->
+              <div class="w-24 h-24 rounded-full overflow-hidden">
+                <NuxtImg 
+                  src="/main-images/profile-img.svg" 
+                  alt="Foto de perfil" 
+                  width="96" 
+                  height="96" 
+                  class="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>

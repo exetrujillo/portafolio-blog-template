@@ -31,10 +31,10 @@ const { data: projects } = await useAsyncData<PortfolioProject[]>('featured-proj
 )
 
 // Usa la interfaz BlogArticle para tipar los posts
-const { data: posts } = await useAsyncData<BlogArticle[]>('recent-posts', () =>
+const { data: posts } = await useAsyncData<BlogArticle[]>('home-recent-posts', () =>
   queryCollection('blog')
     .select('title', 'description', 'date', 'tags', 'path', 'image')
-    .limit(2)
+    .limit(4)
     .all() as Promise<BlogArticle[]>
 )
 
@@ -56,7 +56,7 @@ console.log('Proyectos cargados:', projects.value);
     <!-- Proyectos Destacados -->
     <section class="container mx-auto py-16 px-4">
       <div class="flex justify-between items-center mb-8">
-        <h2 class="text-3xl font-bold titulo-portafolio">Proyectos Destacados</h2>
+        <h2 class="ml-6 text-3xl font-bold titulo-portafolio">Proyectos Destacados</h2>
         <NuxtLink to="/portfolio" class="text-primary hover:underline">Ver todos →</NuxtLink>
       </div>
       
@@ -81,7 +81,7 @@ console.log('Proyectos cargados:', projects.value);
     <!-- Artículos Recientes -->
     <section class="container mx-auto py-16 px-4 bg-gray-50 dark:bg-gray-800">
       <div class="flex justify-between items-center mb-8">
-        <h2 class="text-3xl font-bold titulo-blog">Artículos Recientes</h2>
+        <h2 class="ml-6 text-3xl font-bold titulo-blog">Artículos Recientes</h2>
         <NuxtLink to="/blog" class="text-primary hover:underline">Ver todos →</NuxtLink>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">

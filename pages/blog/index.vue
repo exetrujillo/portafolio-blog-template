@@ -2,7 +2,7 @@
 <script setup lang="ts">
 import type { BlogPostContent } from '~/components/BlogList.vue';
 
-const { data: posts } = await useAsyncData<BlogPostContent[]>('recent-posts', () =>
+const { data: posts } = await useAsyncData<BlogPostContent[]>('blog-page-posts', () =>
   queryCollection('blog')
     .select('title', 'description', 'date', 'tags', 'path', 'image')
     .order('date', 'DESC')

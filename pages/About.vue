@@ -34,10 +34,16 @@ useHead({
         <UCard class="mb-6 transition-all duration-500 hover:transform hover:translateY(-5px)"  
                :style="{ boxShadow: '0 4px 20px rgba(var(--ui-primary-rgb), 0.1)' }">  
           <div class="flex justify-center mb-4">  
-            <!-- Placeholder para foto de perfil -->  
-            <div class="w-32 h-32 rounded-full bg-(--ui-bg-elevated) flex items-center justify-center text-3xl border-2"  
+            <!-- Reemplazado placeholder con Nuxt Image -->  
+            <div class="w-32 h-32 rounded-full border-2 overflow-hidden"  
                  :style="{ borderColor: 'var(--ui-primary)' }">  
-              👤  
+              <NuxtImg 
+                src="/main-images/profile-img.svg" 
+                alt="Foto de perfil" 
+                width="128" 
+                height="128" 
+                class="w-full h-full object-cover"
+              />
             </div>  
           </div>  
           <h2 class="text-2xl font-semibold mb-2 text-center"  
