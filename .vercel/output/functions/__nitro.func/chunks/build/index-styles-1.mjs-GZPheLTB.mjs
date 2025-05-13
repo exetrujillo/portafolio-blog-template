@@ -1,3 +1,0 @@
-const index_vue_vue_type_style_index_0_scoped_a6eeba5d_lang = ".blog-title[data-v-a6eeba5d]{background:linear-gradient(135deg,rgba(var(--ui-bg-rgb),.8),rgba(var(--ui-bg-rgb),.95));border-radius:var(--ui-radius);color:var(--ui-primary);display:inline-block;padding:.5rem 1.5rem;position:relative;text-shadow:2px 2px 0 var(--ui-accent)}";
-
-export { index_vue_vue_type_style_index_0_scoped_a6eeba5d_lang as i };

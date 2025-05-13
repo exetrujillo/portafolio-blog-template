@@ -31,10 +31,5 @@ export default defineNuxtConfig({
   nitro: {  
     preset: 'vercel'  
   },
-  runtimeConfig: {  
-    public: {  
-      // Variables públicas que puedes necesitar  
-    }  
-  },  
   sourcemap: false
 })
