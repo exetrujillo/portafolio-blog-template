@@ -30,17 +30,11 @@ export default defineNuxtConfig({
   // Configuraciones adicionales para producción  
   nitro: {  
     preset: 'vercel'  
-  },  
-  routeRules: {  
-    '/': { prerender: true }  
-  },  
+  },
   runtimeConfig: {  
     public: {  
       // Variables públicas que puedes necesitar  
     }  
   },  
-  sourcemap: false,  
-  $production: {  
-    // Optimizaciones específicas para producción  
-  }  
+  sourcemap: false
 })
