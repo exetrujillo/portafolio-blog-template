@@ -11,8 +11,16 @@ interface HeroProps {
   showAvatar?: boolean;
 }
 
-// Valores por defecto para las props
-const props = withDefaults(defineProps<HeroProps>(), {
+const {
+  name,
+  title,
+  description,
+  primaryButtonText,
+  primaryButtonLink,
+  secondaryButtonText,
+  secondaryButtonLink,
+  showAvatar
+} = withDefaults(defineProps<HeroProps>(), {
   name: 'Tu Nombre',
   title: 'Desarrollador Web | Diseñador | Creador',
   description: 'Bienvenido a mi portafolio personal. Aquí encontrarás mis proyectos, artículos y más información sobre mi trabajo.',
@@ -25,7 +33,7 @@ const props = withDefaults(defineProps<HeroProps>(), {
 </script>
 
 <template>
-  <section class="hero-section relative overflow-hidden py-24 w-full">
+  <section class="hero-section relative overflow-hidden py-6 w-full">
     <!-- Fondo decorativo con patrón de puntos -->
     <div class="absolute inset-0 w-full h-full bg-dots opacity-5 z-0"></div>
     
@@ -34,13 +42,13 @@ const props = withDefaults(defineProps<HeroProps>(), {
     <div class="absolute -bottom-32 -right-20 w-80 h-80 bg-gradient-primary opacity-20 rounded-full blur-3xl z-0"></div>
     
     <div class="w-full relative z-10">
-      <div class="max-w-5xl mx-auto text-center px-4">
+      <div class="max-w-5xl mx-auto text-center">
         <!-- Avatar o logo (condicional) -->
         <div v-if="showAvatar" class="avatar-container mb-8 inline-block">
           <div class="avatar-ring p-1 rounded-full bg-gradient-primary">
             <div class="bg-ui-bg rounded-full p-1">
               <!-- Puedes añadir tu foto o logo aquí -->
-              <div class="w-24 h-24 rounded-full bg-ui-border flex items-center justify-center text-2xl font-bold text-ui-primary">
+              <div class="w-24 h-24 rounded-full bg-ui-border flex items-center justify-center text-xl font-bold text-ui-primary">
                 {{ name.charAt(0) }}
               </div>
             </div>
@@ -48,7 +56,7 @@ const props = withDefaults(defineProps<HeroProps>(), {
         </div>
         
         <!-- Título principal con nombre sin el efecto typewriter aplicado a todo -->
-        <h1 class="text-5xl md:text-6xl font-bold mb-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
           <span class="text-gradient-highlight">{{ name }}</span>
           <span class="cursor-effect"></span>
         </h1>
@@ -63,7 +71,7 @@ const props = withDefaults(defineProps<HeroProps>(), {
         </div>
         
         <!-- Descripción -->
-        <p class="text-xl mb-8 max-w-2xl mx-auto text-ui-text">
+        <p class="text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-ui-text">
           {{ description }}
         </p>
         

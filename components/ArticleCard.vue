@@ -32,59 +32,57 @@ const formattedDate = computed(() => {
 });
 </script>
 
-<!-- components/ArticleCard.vue -->
-<template>
-  <NuxtLink
-    :to="to"
-    class="article-card-link block w-full group focus:outline-none cursor-pointer"
-  >
-    <div class="article-card-body">
-      <div :class="[image ? 'flex gap-6 items-start' : '']">
-        <div v-if="image" class="flex-shrink-0">
-          <NuxtImg
-            :src="image"
-            :alt="`Imagen principal para ${title}`"
-            class="article-card-image w-40 h-35 object-cover rounded-md"
-            loading="lazy"
-          />
-        </div>
-
-        <div class="article-card-content flex-grow">
-          <h2 class="article-card-title">
-            {{ title }}
-          </h2>
-
-          <p class="article-card-excerpt">
-            {{ excerpt }}
-          </p>
-
-          <p
-            v-if="
-              formattedDate !== 'Fecha no disponible' && formattedDate !== 'Error al formatear fecha'
-            "
-            class="article-card-date"
-          >
-            Publicado: {{ formattedDate }}
-          </p>
-
-          <div v-if="tags && tags.length" class="article-card-tags flex flex-wrap gap-2 mt-4">
-            <span v-for="tag in tags" :key="tag" class="article-card-tag">
-              {{ tag }}
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </NuxtLink>
+<template>  
+  <NuxtLink  
+    :to="to"  
+    class="article-card-link block w-full group focus:outline-none cursor-pointer"  
+  >  
+    <div class="article-card-body">  
+      <!-- Usamos clases responsive para cambiar el layout según el tamaño de pantalla -->  
+      <div :class="[image ? 'flex-col sm:flex sm:gap-6 sm:items-start' : '']">  
+        <div v-if="image" class="flex-shrink-0 mb-4 sm:mb-0">  
+          <NuxtImg  
+            :src="image"  
+            :alt="`Imagen principal para ${title}`"  
+            class="article-card-image w-full sm:w-40 h-auto sm:h-35 object-cover rounded-md"  
+            loading="lazy"  
+          />  
+        </div>  
+  
+        <div class="article-card-content flex-grow">  
+          <h2 class="article-card-title">  
+            {{ title }}  
+          </h2>  
+  
+          <p class="article-card-excerpt">  
+            {{ excerpt }}  
+          </p>  
+  
+          <p  
+            v-if="  
+              formattedDate !== 'Fecha no disponible' && formattedDate !== 'Error al formatear fecha'  
+            "  
+            class="article-card-date"  
+          >  
+            Publicado: {{ formattedDate }}  
+          </p>  
+  
+          <div v-if="tags && tags.length" class="article-card-tags flex flex-wrap gap-2 mt-4">  
+            <span v-for="tag in tags" :key="tag" class="article-card-tag">  
+              {{ tag }}  
+            </span>  
+          </div>  
+        </div>  
+      </div>  
+    </div>  
+  </NuxtLink>  
 </template>
 
 <style scoped>
-/* Mantener margen inferior para espaciado entre cards */
 .article-card-link {
-  margin-bottom: 1.5rem; /* mb-6 */
+  margin-bottom: 1.5rem;
 }
 
-/* Eliminar subrayado en hover/focus del enlace principal */
 .article-card-link:hover,
 .article-card-link:focus-visible {
   text-decoration: none;
@@ -99,22 +97,15 @@ const formattedDate = computed(() => {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
   width: 100%;
-  /* Color de borde por defecto */
   border-color: var(--ui-border);
   background-color: var(--ui-code-block-bg);
   color: var(--ui-text);
 }
 
-/* Modificar estilos en hover/focus para el cuerpo de la tarjeta */
 .article-card-link:hover .article-card-body,
 .article-card-link:focus-visible .article-card-body {
-  /* Mantener la sombra y la escala */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
   transform: scale(1.01);
-
-  /* Cambiar el color del borde en hover/focus */
-  /* Puedes volver al color por defecto, o usar accented como en ProjectCard */
-  /* Usaremos accented para parecerse más al UCard por defecto en hover */
   border-color: var(--ui-border-accented);
 }
 
@@ -125,11 +116,9 @@ const formattedDate = computed(() => {
   font-size: 1.65rem;
   margin-top: 0.1rem;
   margin-bottom: 1rem;
-  /* Eliminar el text-decoration por defecto si lo hay */
   text-decoration: none;
 }
 
-/* Eliminar el subrayado en hover/focus del título */
 .article-card-link:hover .article-card-title,
 .article-card-link:focus-visible .article-card-title {
   text-decoration: none;
@@ -160,7 +149,6 @@ const formattedDate = computed(() => {
   transition-property: color, background-color, border-color,
     text-decoration-color, fill, stroke;
   transition-duration: 200ms;
-  /* Mantener colores temáticos */
   background-color: var(--ui-primary);
   color: var(--ui-bg);
   opacity: 1;

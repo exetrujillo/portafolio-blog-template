@@ -18,7 +18,7 @@ useHead({
 </script>  
   
 <template>  
-  <div class="py-8">  
+  <div class="py-8 px-4 sm:px-6 lg:px-8">  
     <div class="mb-12 text-center relative">    
       <h1 class="text-5xl font-extrabold mb-6 relative about-title">  
         Sobre Mí  

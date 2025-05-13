@@ -5,8 +5,7 @@
     <Navbar />
     <!-- El contenido principal ocupa el espacio restante -->
     <main class="flex-grow">
-      <!-- UContainer centra el contenido y añade padding horizontal por defecto -->
-      <UContainer class="py-4"> <!-- Añadimos padding vertical -->
+      <UContainer class="-px-4 sm:-px-6 lg:-px-8"> <!-- Añadimos padding vertical -->
         <NuxtPage />
       </UContainer>
     </main>
@@ -14,7 +13,6 @@
   </div>
 </template>
 
-<!-- Eliminamos la etiqueta <style> ya que usamos clases de Tailwind/Nuxt UI -->
 <style>
 .layout-container {
   display: flex;
@@ -22,9 +20,9 @@
   min-height: 100vh;
 }
 
-/*.main-content {
+.main-content {
   flex: 1;
   padding: 1rem;
 }
-*/
+
 </style>

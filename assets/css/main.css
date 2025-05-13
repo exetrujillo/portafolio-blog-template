@@ -19,39 +19,31 @@
 
     /* --- Variables específicas para bloques de código --- */
     /* Relevante solo para blogs y portafolios de desarrolladores o educadores */
-
-    /* Fondo para bloques de código (elementos pre) */
-    --ui-code-block-bg: #f0f2f5; /* Gris con toque azulado para combinar con paleta */
-    /* Fondo para código en línea */
-    --ui-inline-code-bg: #e8eaef; /* Un poco más oscuro que el bloque completo */
-    /* Color para texto de código en línea si no se usa resaltado */
-    --ui-inline-code-text: var(--ui-text); /* Mantiene coherencia con el texto principal */
+    --ui-code-block-bg: #f0f2f5;
+    --ui-inline-code-bg: #e8eaef;
+    --ui-inline-code-text: var(--ui-text);
 }
 
 /* Tema Oscuro */
 .dark {
-    --ui-bg: #202438; /* Fondo azul oscuro */
-    --ui-text: #F5F5F7; /* Texto ligeramente más blanco para mejor contraste */
-    --ui-primary: #D6C400; /* Amarillo/dorado como color principal */
+    --ui-bg: #202438;
+    --ui-text: #F5F5F7;
+    --ui-primary: #D6C400;
     --ui-primary-rgb: 214, 196, 0;
-    --ui-secondary: #80123F; /* Color secundario */
+    --ui-secondary: #80123F;
     --ui-secondary-rgb: 128, 18, 63;
-    --ui-accent: #57123D; /* Color de acento */
+    --ui-accent: #57123D;
     --ui-accent-rgb: 87, 18, 61;
-    --ui-highlight: #E6D300; /* Amarillo ligeramente más brillante para mayor visibilidad */
+    --ui-highlight: #E6D300;
     --ui-highlight-rgb: 230, 211, 0;
-    --ui-border: #3a3f56; /* Color de borde oscuro */
+    --ui-border: #3a3f56;
 
     /* --- Variables específicas para bloques de código (Modo Oscuro) --- */
-    /* Fondo para bloques de código (elementos pre) */
-    --ui-code-block-bg: #2a2d40; /* Gris azulado oscuro para complementar el fondo */
-    /* Fondo para código en línea */
-    --ui-inline-code-bg: #33384f; /* Un gris azulado más claro */
-    /* Color para texto de código en línea si no se usa resaltado */
-    --ui-inline-code-text: var(--ui-text); /* Consistente con el texto principal */
+    --ui-code-block-bg: #2a2d40;
+    --ui-inline-code-bg: #33384f;
+    --ui-inline-code-text: var(--ui-text);
 }
 
-/* Clases de utilidad para gradientes usando tus variables de color */
 .bg-gradient-primary {
   background-image: linear-gradient(to right, rgb(var(--ui-primary-rgb)), rgb(var(--ui-secondary-rgb)));
 }
@@ -101,7 +93,6 @@ body {
 
 /* Estilos para Markdown */
 .prose {
-  /* Estilos generales */
   color: var(--ui-text);
 }
 
@@ -148,7 +139,7 @@ body {
 .prose li {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
-  display: list-item !important; /* Asegura la visualización de elementos de lista */
+  display: list-item !important;
 }
 
 /* Bloques de código */

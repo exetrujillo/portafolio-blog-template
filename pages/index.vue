@@ -48,7 +48,7 @@ console.log('Proyectos cargados:', projects.value);
     <HeroSection 
       name="Tu Nombre"
       title="Desarrollador Web | Diseñador | Creador de Contenido"
-      description="Transformando ideas en experiencias digitales únicas. Explora mi portafolio para descubrir cómo combino diseño y desarrollo para crear soluciones web elegantes y funcionales."
+      description="Transformando ideas en experiencias digitales únicas. Combino diseño y desarrollo para crear soluciones web elegantes y funcionales."
       primaryButtonText="Ver Proyectos"
       secondaryButtonText="Conóceme"
     />
