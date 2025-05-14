@@ -56,6 +56,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, nextTick, computed, h, type VNode } from 'vue';
+import { UIcon } from '#components';
 
 // Define el tipo para un enlace del índice de contenidos (manual)
 interface ManualTocLink {
@@ -153,36 +154,3 @@ function renderTocLinks(links: ManualTocLink[] | undefined | null): VNode | null
   ));
 }
 </script>
-
-<style scoped>
-ol {
-  margin: 0;
-  counter-reset: item;
-}
-
-ol > li {
-  counter-increment: item;
-  display: block;
-}
-
-ol > li:before {
-  content: counters(item, ".") ". ";
-  display: inline-block;
-  margin-right: 0.5rem;
-}
-
-ol {
-  list-style-type: none;
-  padding-left: 1rem;
-}
-
-a {
-  display: inline-block;
-  padding: 0.25rem 0;
-  text-decoration: none;
-}
-
-a:hover {
-  opacity: 0.8;
-}
-</style>

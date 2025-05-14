@@ -32,13 +32,21 @@ useHead({
     <div class="max-w-6xl mx-auto">
       <div class="mb-12 text-center relative">
         <div class="absolute inset-0 flex items-center justify-center -z-10">
-          <div class="text-9xl font-black tracking-widest opacity-5"
+          <div class="text-9xl font-black tracking-widest opacity-10"
                :style="{ color: 'var(--ui-primary)' }">BLOG</div>
         </div>
 
-        <h1 class="text-5xl font-extrabold relative blog-title">
+        <h1 class="text-5xl font-extrabold mb-6 relative blog-title">
           Blog
         </h1>
+
+        <div class="w-24 h-1 mx-auto mb-6 rounded-full"
+             :style="{ backgroundColor: 'var(--ui-primary)' }"></div>
+
+        <p class="text-xl max-w-2xl mx-auto mb-10"
+           :style="{ color: 'var(--ui-text)' }">
+          Explora mis últimos artículos y reflexiones sobre desarrollo, tecnología y más.
+        </p>
       </div>
 
       <BlogList :posts="posts" />

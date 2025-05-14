@@ -17,7 +17,7 @@ const formattedDate = computed(() => {
   try {
     const date = new Date(props.date);
     if (isNaN(date.getTime())) {
-      //console.error("ArticleCard: String de fecha inválido:", props.date);
+      console.error("ArticleCard: String de fecha inválido:", props.date);
       return props.date; // Fallback
     }
     return date.toLocaleDateString('es-ES', {
@@ -26,7 +26,7 @@ const formattedDate = computed(() => {
       day: 'numeric'
     });
   } catch (e) {
-    //console.error("ArticleCard: Error procesando fecha:", props.date, e);
+    console.error("ArticleCard: Error procesando fecha:", props.date, e);
     return 'Error al formatear fecha';
   }
 });
@@ -80,7 +80,7 @@ const formattedDate = computed(() => {
 
 <style scoped>
 .article-card-link {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0rem;
 }
 
 .article-card-link:hover,

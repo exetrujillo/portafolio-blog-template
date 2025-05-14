@@ -22,36 +22,27 @@ if (!project.value) {
   throw createError({ statusCode: 404, message: 'Proyecto no encontrado' })
 }
 
-// Para metadatos SEO  
-useSeoMeta({  
-  title: project.value?.title,  
-  description: project.value?.description,  
-  ogTitle: project.value?.title,  
-  ogDescription: project.value?.description,  
-  ogImage: project.value?.image ? project.value.image : undefined,  
-})  
-  
-// Para scripts y otros elementos de head  
-useHead({  
-  script: [  
-    {  
-      innerHTML: `  
-        document.addEventListener('DOMContentLoaded', function() {  
-          const proseContent = document.querySelector('.prose');  
-          if (proseContent) {  
-            const headings = proseContent.querySelectorAll('h2, h3, h4, h5, h6');  
-            headings.forEach(heading => {  
-              const links = heading.querySelectorAll('.header-anchor');  
-              links.forEach(link => {  
-                link.parentNode?.removeChild(link);  
-              });  
-            });  
-          }  
-        });  
-      `,  
-      type: 'text/javascript'  
-    }  
-  ]  
+useHead({
+  title: project.value?.title,
+  script: [
+    {
+      innerHTML: `
+        document.addEventListener('DOMContentLoaded', function() {
+          const proseContent = document.querySelector('.prose');
+          if (proseContent) {
+            const headings = proseContent.querySelectorAll('h2, h3, h4, h5, h6');
+            headings.forEach(heading => {
+              const links = heading.querySelectorAll('.header-anchor');
+              links.forEach(link => {
+                link.parentNode?.removeChild(link);
+              });
+            });
+          }
+        });
+      `,
+      type: 'text/javascript'
+    }
+  ]
 })
 </script>
 
@@ -114,6 +105,5 @@ useHead({
    pointer-events: auto !important;
    opacity: 1 !important;
    position: static !important;
-   text-decoration: none !important;
 }
 </style>

@@ -1,19 +1,7 @@
 <template>
   <footer class="footer">
     <div class="container mx-auto px-4">
-      <div class="footer-content">
-        <div class="footer-left">
-          <p class="copyright">© {{ currentYear }} Exequiel Trujillo</p>
-        </div>
-        
-        <div class="footer-center">
-          <p class="rights">Todos los derechos reservados</p>
-        </div>
-        
-        <div class="footer-right">
-          <a href="mailto:exequiel.trujillo@ug.uchile.cl" class="contact-link">Contacto</a>
-        </div>
-      </div>
+      <p class="text-center">© {{ currentYear }} Tu Nombre. Todos los derechos reservados. <span class="separator">|</span> <a href="mailto:tu@correo.com" class="contact-link">Contacto</a></p>
     </div>
   </footer>
 </template>
@@ -43,19 +31,9 @@ const currentYear = new Date().getFullYear();
   max-width: 1200px;
 }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.footer-left, .footer-center, .footer-right {
-  padding: 0 0.5rem;
-}
-
-.copyright, .rights {
-  margin: 0;
+.separator {
+  margin: 0 0.5rem;
+  opacity: 0.6;
 }
 
 .contact-link {
@@ -92,17 +70,5 @@ const currentYear = new Date().getFullYear();
   box-shadow: 0 0 10px rgba(var(--ui-primary-rgb), 0.7), 
               0 0 20px rgba(var(--ui-highlight-rgb), 0.4);
 }
-
-@media (max-width: 640px) {
-  .footer {
-    height: auto;
-    padding: 1rem 0;
-  }
-  
-  .footer-content {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-  }
-}
 </style>
+  

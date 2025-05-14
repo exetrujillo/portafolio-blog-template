@@ -37,23 +37,26 @@ const { data: posts } = await useAsyncData<BlogArticle[]>('home-recent-posts', (
     .limit(4)
     .all() as Promise<BlogArticle[]>
 )
+
+// Para propósitos de depuración
+console.log('Proyectos cargados:', projects.value);
 </script>
 
 <template>
   <main>
     <!-- Nuevo componente HeroSection -->
     <HeroSection 
-      name="Exequiel Trujillo"
-      title="Desarrollo Web | Ciencias Sociales | Arte y Cultura"
-      description="¡Hola! Bienvenid_ a mi portafolio 😉. Desarrollo con entusiasmo, programo para las ciencias sociales y soy amante de la música. Me interesa la intersección entre tecnología y ciencias sociales."
-      primaryButtonText="Mis Proyectos"
-      secondaryButtonText="Sobre Mí"
+      name="Tu Nombre"
+      title="Desarrollador Web | Diseñador | Creador de Contenido"
+      description="Transformando ideas en experiencias digitales únicas. Combino diseño y desarrollo para crear soluciones web elegantes y funcionales."
+      primaryButtonText="Ver Proyectos"
+      secondaryButtonText="Conóceme"
     />
 
     <!-- Proyectos Destacados -->
-    <section class="container mx-auto py-8 px-4">
+    <section class="container mx-auto py-16 px-4">
       <div class="flex justify-between items-center mb-8">
-        <h2 class="ml-1 text-3xl font-bold titulo-portafolio">Proyectos Destacados</h2>
+        <h2 class="ml-6 text-3xl font-bold titulo-portafolio">Proyectos Destacados</h2>
         <NuxtLink to="/portfolio" class="text-primary hover:underline">Ver todos →</NuxtLink>
       </div>
       
@@ -76,9 +79,9 @@ const { data: posts } = await useAsyncData<BlogArticle[]>('home-recent-posts', (
     </section>
 
     <!-- Artículos Recientes -->
-    <section class="container mx-auto py-8 px-4 bg-gray-50 dark:bg-gray-800">
+    <section class="container mx-auto py-16 px-4 bg-gray-50 dark:bg-gray-800">
       <div class="flex justify-between items-center mb-8">
-        <h2 class="ml-1 text-3xl font-bold titulo-blog">Artículos Recientes</h2>
+        <h2 class="ml-6 text-3xl font-bold titulo-blog">Artículos Recientes</h2>
         <NuxtLink to="/blog" class="text-primary hover:underline">Ver todos →</NuxtLink>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">

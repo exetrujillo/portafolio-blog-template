@@ -1,0 +1,161 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/* Light Theme */
+:root {
+    --ui-bg: #FFFFFF;
+    --ui-text: #333333; /* Darker text for better readability */
+    --ui-primary: #B1ADFA; /* Light lavender blue from image */
+    --ui-primary-rgb: 177, 173, 250;
+    --ui-secondary: #FCF10D; /* Bright yellow from image */
+    --ui-secondary-rgb: 252, 241, 13;
+    --ui-accent: #FF9021; /* Orange from image */
+    --ui-accent-rgb: 255, 144, 33;
+    --ui-highlight: #ADF078; /* Light green from image */
+    --ui-highlight-rgb: 173, 240, 120;
+    --ui-border: #e0e0e0; /* Light border color */
+    --ui-radius: 0.5rem;
+
+    /* --- Code Block Specific Variables --- */
+    --ui-code-block-bg: #f7f7f7; /* A very light gray */
+    --ui-inline-code-bg: #f0f0f0; /* A slightly darker light gray */
+    --ui-inline-code-text: var(--ui-text);
+}
+
+/* Dark Theme */
+.dark {
+    --ui-bg: #333333; /* Dark background */
+    --ui-text: #EDEDED; /* Light text */
+    --ui-primary: #B1ADFA; /* Light lavender blue - same as light theme for consistency */
+    --ui-primary-rgb: 177, 173, 250;
+    --ui-secondary: #FCF10D; /* Bright yellow - same as light theme */
+    --ui-secondary-rgb: 252, 241, 13;
+    --ui-accent: #FF9021; /* Orange - same as light theme */
+    --ui-accent-rgb: 255, 144, 33;
+    --ui-highlight: #ADF078; /* Light green - same as light theme */
+    --ui-highlight-rgb: 173, 240, 120;
+    --ui-border: #555555; /* Dark border color */
+
+    /* --- Code Block Specific Variables (Dark Mode) --- */
+    --ui-code-block-bg: #2d2d2d; /* A dark gray */
+    --ui-inline-code-bg: #3a3a3a; /* A slightly lighter dark gray */
+    --ui-inline-code-text: var(--ui-text);
+}
+
+
+/* Markdown Styles */
+.prose {
+  /* General styles */
+  color: var(--ui-text);
+}
+
+/* Headings */
+.prose h1 {
+  color: var(--ui-primary);
+  font-size: 2.25rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.prose h2 {
+  color: var(--ui-primary);
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.prose h3 {
+  color: var(--ui-primary);
+  font-size: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Lists */
+.prose ul {
+  list-style-type: disc !important;
+  padding-left: 1.5rem !important;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose ol {
+  list-style-type: decimal !important;
+  padding-left: 1.5rem !important;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose li {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  display: list-item !important; /* Ensure list item display */
+}
+
+
+/* --- Code blocks --- */
+.prose pre {
+  background-color: var(--ui-code-block-bg);
+  border-radius: var(--ui-radius);
+  padding: 1rem;
+  overflow-x: auto;
+  border: 1px solid var(--ui-border);
+}
+
+.prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875rem;
+  background-color: var(--ui-inline-code-bg);
+  color: var(--ui-inline-code-text);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+/* This rule correctly targets code INSIDE <pre> and resets its styles */
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
+  white-space: pre;
+}
+
+
+/* Paragraphs */
+.prose p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.625;
+}
+
+/* Ensure line breaks are clear */
+.prose * + * {
+  margin-top: 0.75em;
+}
+
+
+/* Links */
+.prose a {
+  color: var(--ui-accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ui-accent);
+  transition: all 0.2s ease;
+}
+
+.prose a:hover {
+  color: var(--ui-secondary);
+  border-bottom-color: var(--ui-secondary);
+}
+
+.prose a[target="_blank"]::after {
+  content: "↗";
+  display: inline-block;
+  margin-left: 0.2em;
+  font-size: 0.8em;
+  vertical-align: super;
+}
