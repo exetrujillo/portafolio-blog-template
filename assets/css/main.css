@@ -4,43 +4,42 @@
 
 /* Tema Claro */
 :root {
-    --ui-bg: #FFFFFF; /* Fondo blanco para mejor legibilidad */
-    --ui-text: #202438; /* Color de texto oscuro para mayor contraste */
-    --ui-primary: #202438; /* Mismo azul oscuro que el tema oscuro usa de fondo */
-    --ui-primary-rgb: 32, 36, 56;
-    --ui-secondary: #57123D;
-    --ui-secondary-rgb: 87, 18, 61;
-    --ui-accent: #80123F; 
-    --ui-accent-rgb: 128, 18, 63;
-    --ui-highlight: #B8A800; /* Amarillo ligeramente oscuro para mejor contraste en fondo claro */
-    --ui-highlight-rgb: 184, 168, 0;
-    --ui-border: #d0d0d8; /* Borde con un toque de azul para complementar los colores primarios */
+    --ui-bg: #F8F9FC; /* Fondo ligeramente azulado muy suave */
+    --ui-text: #2C3054; /* Texto azul oscuro para máximo contraste (ratio >7:1) */
+    --ui-primary: #36827D; /* Verde azulado más intenso como primario (teal) */
+    --ui-primary-rgb: 54, 130, 125;
+    --ui-secondary: #D06B90; /* Rosa medio con suficiente contraste */
+    --ui-secondary-rgb: 208, 107, 144;
+    --ui-accent: #E87A46; /* Naranja terracota como acento vibrante */
+    --ui-accent-rgb: 232, 122, 70;
+    --ui-highlight: #3DA5D9; /* Azul turquesa brillante como resaltado */
+    --ui-highlight-rgb: 61, 165, 217;
+    --ui-border: #D8DDE9; /* Borde gris azulado suave */
     --ui-radius: 0.5rem;
 
     /* --- Variables específicas para bloques de código --- */
-    /* Relevante solo para blogs y portafolios de desarrolladores o educadores */
-    --ui-code-block-bg: #f0f2f5;
-    --ui-inline-code-bg: #e8eaef;
-    --ui-inline-code-text: var(--ui-text);
+    --ui-code-block-bg: #EFF5F5; /* Fondo código con toque turquesa muy suave */
+    --ui-inline-code-bg: #E6EFEF; /* Fondo inline code con toque turquesa más claro */
+    --ui-inline-code-text: #2A4948; /* Verde azulado oscuro para texto de código */
 }
 
-/* Tema Oscuro */
+/* Tema Oscuro - Mantenido como en la propuesta anterior */
 .dark {
-    --ui-bg: #202438;
-    --ui-text: #F5F5F7;
-    --ui-primary: #D6C400;
-    --ui-primary-rgb: 214, 196, 0;
-    --ui-secondary: #80123F;
-    --ui-secondary-rgb: 128, 18, 63;
-    --ui-accent: #57123D;
-    --ui-accent-rgb: 87, 18, 61;
-    --ui-highlight: #E6D300;
-    --ui-highlight-rgb: 230, 211, 0;
-    --ui-border: #3a3f56;
+    --ui-bg: #151829; /* Fondo más oscuro para mejorar contraste */
+    --ui-text: #F8F9FD; /* Texto más brillante para mejor legibilidad */
+    --ui-primary: #E6D000; /* Amarillo primario más accesible con ratio >4.5:1 */
+    --ui-primary-rgb: 230, 208, 0;
+    --ui-secondary: #CD2E6C; /* Secundario más vibrante y visible */
+    --ui-secondary-rgb: 205, 46, 108;
+    --ui-accent: #A12D5E; /* Acento más contrastante */
+    --ui-accent-rgb: 161, 45, 94;
+    --ui-highlight: #FFF04D; /* Amarillo más brillante para destacar en fondo oscuro */
+    --ui-highlight-rgb: 255, 240, 77;
+    --ui-border: #4A4F6A; /* Borde más visible en modo oscuro */
 
     /* --- Variables específicas para bloques de código (Modo Oscuro) --- */
-    --ui-code-block-bg: #2a2d40;
-    --ui-inline-code-bg: #33384f;
+    --ui-code-block-bg: #222538;
+    --ui-inline-code-bg: #2A2E47;
     --ui-inline-code-text: var(--ui-text);
 }
 
@@ -164,6 +163,7 @@ body {
 
 .prose pre code {
   background-color: transparent;
+  tab-size: inherit;
   padding: 0;
   border-radius: 0;
   color: inherit;

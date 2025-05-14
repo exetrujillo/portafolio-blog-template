@@ -1,13 +1,13 @@
 <!-- components/HeroSection.vue -->  
-<script setup lang="ts">  
-interface HeroProps {  
-  name?: string;  
-  title?: string;  
-  description?: string;  
-  primaryButtonText?: string;  
-  primaryButtonLink?: string;  
-  secondaryButtonText?: string;  
-  secondaryButtonLink?: string;  
+<script setup lang="ts">
+interface HeroProps {
+  name?: string;
+  title?: string;
+  description?: string;
+  primaryButtonText?: string;
+  primaryButtonLink?: string;
+  secondaryButtonText?: string;
+  secondaryButtonLink?: string;
   showAvatar?: boolean;  
 }  
   
@@ -24,7 +24,7 @@ const {
 </script>
 
 <template>
-  <section class="hero-section relative overflow-hidden py-6 w-full">
+  <section class="hero-section relative overflow-hidden w-full min-h-screen flex flex-col justify-center items-center">
     <!-- Fondo decorativo con patrón de puntos -->
     <div class="absolute inset-0 w-full h-full bg-dots opacity-5 z-0"></div>
     
@@ -32,16 +32,16 @@ const {
     <div class="absolute -top-20 -left-20 w-64 h-64 bg-gradient-highlight opacity-20 rounded-full blur-2xl z-0"></div>
     <div class="absolute -bottom-32 -right-20 w-80 h-80 bg-gradient-primary opacity-20 rounded-full blur-3xl z-0"></div>
     
-    <div class="w-full relative z-10">
+    <div class="w-full relative z-10 md:py-12 px-4">
       <div class="max-w-5xl mx-auto text-center">
         <!-- Avatar con NuxtImg -->
-        <div v-if="showAvatar" class="avatar-container mb-8 inline-block">
+        <div v-if="showAvatar" class="avatar-container mb-6 md:mb-8 inline-block">
           <div class="avatar-ring p-1 rounded-full bg-gradient-primary">
             <div class="bg-ui-bg rounded-full p-1">
               <!-- Reemplazado el placeholder con NuxtImg -->
-              <div class="w-24 h-24 rounded-full overflow-hidden">
-                <NuxtImg 
-                  src="/main-images/profile-img.svg" 
+              <div class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden">
+                <NuxtPicture
+                  src="/main-images/profile-img.jpeg" 
                   alt="Foto de perfil" 
                   width="96" 
                   height="96" 
@@ -53,39 +53,39 @@ const {
         </div>
         
         <!-- Título principal con nombre sin el efecto typewriter aplicado a todo -->
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
           <span class="text-gradient-highlight">{{ name }}</span>
           <span class="cursor-effect"></span>
         </h1>
         
         <!-- Subtítulo con badges utilizando los colores personalizados -->
-        <div class="flex flex-wrap justify-center gap-2 mb-6">
+        <div class="flex flex-wrap justify-center gap-2 mb-5 md:mb-6">
           <span v-for="(skill, index) in title.split('|')" :key="index" 
-                class="badge px-3 py-1 rounded-full text-sm font-medium"
+                class="badge px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium"
                 :class="{ 'bg-primary-light': true }">
             {{ skill.trim() }}
           </span>
         </div>
         
         <!-- Descripción -->
-        <p class="text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-ui-text">
+        <p class="text-sm sm:text-base md:text-lg lg:text-xl mb-6 md:mb-8 max-w-2xl mx-auto px-3 sm:px-6 lg:px-8 text-ui-text">
           {{ description }}
         </p>
         
         <!-- Botones con efecto hover usando los colores de la marca -->
-        <div class="flex flex-wrap justify-center gap-4">
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4">
           <NuxtLink :to="primaryButtonLink" 
-                   class="btn-primary px-6 py-3 rounded-full font-medium transition-all hover:scale-105 hover:shadow-lg bg-gradient-primary text-white">
+                   class="btn-primary px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all hover:scale-105 hover:shadow-lg bg-gradient-primary text-white text-sm md:text-base">
             {{ primaryButtonText }}
           </NuxtLink>
           <NuxtLink :to="secondaryButtonLink" 
-                   class="btn-secondary px-6 py-3 rounded-full font-medium transition-all hover:scale-105 border-2 border-ui-primary text-ui-primary">
+                   class="btn-secondary px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all hover:scale-105 border-2 border-ui-primary text-ui-primary text-sm md:text-base">
             {{ secondaryButtonText }}
           </NuxtLink>
         </div>
         
         <!-- Scroll indicator mejorado -->
-        <div class="scroll-indicator mt-16">
+        <div class="scroll-indicator mt-12 sm:mt-16 hidden md:block">
           <div class="scroll-mouse mx-auto">
             <div class="scroll-wheel"></div>
           </div>
@@ -207,6 +207,14 @@ const {
   100% {
     opacity: 0;
     transform: translateX(-50%) translateY(15px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-height: 700px) {
+  .hero-section {
+    /*padding-top: 2rem;*/
+    padding-bottom: 2rem;
   }
 }
 </style>

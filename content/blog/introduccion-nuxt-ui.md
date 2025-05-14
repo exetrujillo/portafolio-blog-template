@@ -2,11 +2,11 @@
 title: Introducción a Nuxt UI
 description: Descubre cómo Nuxt UI puede mejorar la experiencia de desarrollo en tus proyectos Nuxt.
 date: 2025-05-01
-tags: ['nuxt', 'ui', 'componentes']
+tags: ['UI/UX', 'Nuxt']
 image: /blog-images/web-design-1.webp
 ---
 
-Nuxt UI es una biblioteca de componentes para Nuxt 3 que proporciona una colección de componentes UI totalmente estilizados y personalizables. Basada en Tailwind CSS, Nuxt UI facilita la creación de interfaces de usuario modernas y atractivas sin tener que preocuparte por el diseño desde cero.
+Nuxt UI es una biblioteca de componentes para Nuxt 3 que proporciona una colección de componentes UI totalmente estilizados y personalizables. Basada en Reka UI, Tailwind CSS v4 y Tailwind Variants, Nuxt UI facilita la creación de interfaces de usuario modernas y atractivas sin tener que preocuparte por el diseño desde cero.
 
 ## Características principales
 
@@ -32,6 +32,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
   ],
+  css: ['~/assets/css/main.css']
 })
 ```
 
@@ -44,6 +45,14 @@ Nuxt UI ofrece una amplia gama de componentes, desde botones hasta formularios y
 - UInput: Campos de entrada con validación y estados
 - UAlert: Mensajes de alerta para notificaciones
 - UDropdown: Menús desplegables para opciones
+- 55+ componentes UI totalmente estilizados y personalizables  
+- Integración perfecta con Nuxt 3 y Vue 3  
+- Basado en Tailwind CSS v4 con la directiva @theme  
+- Construido sobre primitivos de Reka UI para una robusta accesibilidad  
+- API de Tailwind Variants para estilos flexibles  
+- Soporte completo para TypeScript con autocompletado  
+- Soporte para modo oscuro/claro  
+- Internacionalización incorporada con soporte RTL/LTR  
 
 ## Ejemplo de uso
 
@@ -83,7 +92,7 @@ Esto te permite mantener una apariencia consistente en toda tu aplicación sin t
 
 ## Integración con iconos
 
-Nuxt UI se integra perfectamente con iconos a través del módulo `@nuxt/icon`. Para usar iconos, simplemente instala las colecciones que necesites:
+Nuxt UI se integra perfectamente con iconos a través del módulo `@nuxt/icon`, dando acceso a más de 200,000 iconos personalizables de Iconify. Para usar iconos, simplemente instala las colecciones que necesites:
 
 ```bash
 npm install -D @iconify-json/lucide

@@ -22,30 +22,40 @@ if (!article.value) {
   throw createError({ statusCode: 404, message: 'Artículo no encontrado' })
 }
 
-useHead({
-  title: article.value?.title,
-  script: [
-    {
-      innerHTML: `
-        document.addEventListener('DOMContentLoaded', function() {
-          const headings = document.querySelectorAll('.prose h2, .prose h3, .prose h4, .prose h5, .prose h6');
-          headings.forEach(heading => {
-            const links = heading.querySelectorAll('a');
-            links.forEach(link => {
-              if (link.classList.contains('header-anchor')) {
-                const parent = link.parentNode;
-                while (link.firstChild) {
-                  parent.insertBefore(link.firstChild, link);
-                }
-                parent.removeChild(link);
-              }
-            });
-          });
-        });
-      `,
-      type: 'text/javascript'
-    }
-  ]
+// Para metadatos SEO  
+useSeoMeta({  
+  title: article.value?.title,  
+  description: article.value?.description,  
+  ogTitle: article.value?.title,  
+  ogDescription: article.value?.description,  
+  // Si tienes una imagen, úsala para las tarjetas sociales  
+  ogImage: article.value?.image ? article.value.image : undefined,  
+})  
+  
+// Para scripts y otros elementos de head  
+useHead({  
+  script: [  
+    {  
+      innerHTML: `  
+        document.addEventListener('DOMContentLoaded', function() {  
+          const headings = document.querySelectorAll('.prose h2, .prose h3, .prose h4, .prose h5, .prose h6');  
+          headings.forEach(heading => {  
+            const links = heading.querySelectorAll('a');  
+            links.forEach(link => {  
+              if (link.classList.contains('header-anchor')) {  
+                const parent = link.parentNode;  
+                while (link.firstChild) {  
+                  parent.insertBefore(link.firstChild, link);  
+                }  
+                parent.removeChild(link);  
+              }  
+            });  
+          });  
+        });  
+      `,  
+      type: 'text/javascript'  
+    }  
+  ]  
 })
 </script>
 
@@ -53,7 +63,7 @@ useHead({
   <NuxtLayout name="blog-post">
     <!-- Pasa la imagen al slot del layout -->
     <template #image v-if="article?.image">
-      <NuxtImg
+      <NuxtPicture
         :src="article.image"
         :alt="`Imagen principal para ${article?.title}`"
         class="w-full object-cover rounded-md"

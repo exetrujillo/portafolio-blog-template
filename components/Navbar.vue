@@ -1,11 +1,13 @@
 <!-- components/Navbar.vue -->  
 <template>  
   <header class="navbar">  
-    <!-- Contenedor principal con ancho máximo y padding responsivo -->  
-    <div class="flex justify-between items-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">  
+    <div class="flex justify-between items-center max-w-4xl mx-auto px-2 sm:px-3 lg:px-4">
         
-      <!-- Logo -->  
-      <NuxtLink to="/" class="logo flex-shrink-0" :style="{ color: 'var(--ui-primary)' }">MiLogo</NuxtLink>  
+      <!-- Logo y Texto -->  
+      <NuxtLink to="/" class="logo-container flex-shrink-0">
+        <img src="/logo.svg" alt="ExeTrujillo Logo" class="logo-img" />
+        <span class="logo-text">ExeTrujillo</span>
+      </NuxtLink>  
         
       <!-- Menú de Navegación Horizontal - SOLO visible en pantallas md y superiores -->  
       <div class="hidden md:block flex-1">  
@@ -33,7 +35,7 @@
         <!-- Botón de menú móvil - Visible SOLO en pantallas menores a md -->  
         <UButton  
           icon="i-lucide-menu"  
-          color="gray"  
+          color="primary"  
           variant="ghost"  
           class="ml-2 md:hidden"  
           aria-label="Menú"  
@@ -87,25 +89,49 @@ watch(() => route.path, () => {
   top: 0;  
 }  
   
-.logo {  
-  font-weight: 800;  
-  font-size: 1.75rem;  
-  text-decoration: none;  
-  transition: all 0.3s ease;  
-  letter-spacing: -0.5px;  
-}  
+/* Contenedor del logo y texto */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Espacio entre la imagen del logo y el texto */
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.logo-img {
+  height: 4rem; /* Logo más grande (ajusta según necesites, ej: 48px) */
+  width: auto;
+  display: block;
+  transition: all 0.3s ease; /* Para transiciones en hover */
+}
+
+.logo-text {
+  font-weight: 800;
+  font-size: 1.65rem; /* Ajusta el tamaño del texto según necesites */
+  color: var(--ui-primary); /* Color del texto del logo */
+  letter-spacing: -0.5px;
+  transition: color 0.3s ease; /* Para transiciones en hover */
+}
   
-/* Ajuste responsive para el logo */  
+/* Ajuste responsive para el logo y texto */  
 @media (max-width: 640px) {  
-  .logo {  
-    font-size: 1.5rem;  
-  }  
+  .logo-img {  
+    height: 2.25rem; /* Logo un poco más pequeño en móviles (ej: 36px) */
+  }
+  .logo-text {
+    font-size: 1.35rem; /* Texto del logo más pequeño en móviles */
+  }
 }  
   
-.logo:hover {  
-  filter: drop-shadow(0 0 5px rgba(var(--ui-primary-rgb), 0.7));  
-  transform: scale(1.03);  
-}  
+.logo-container:hover .logo-img {  
+  filter: drop-shadow(0 0 7px rgba(var(--ui-primary-rgb), 0.8));  
+  transform: scale(1.05);  
+}
+.logo-container:hover .logo-text {
+  /* Aplicamos el mismo efecto hover que a la imagen */
+  filter: drop-shadow(0 0 7px rgba(var(--ui-primary-rgb), 0.8));  
+  transform: scale(1.05); 
+}
   
 /* Menú de navegación horizontal */  
 :deep(.nav-menu) {  

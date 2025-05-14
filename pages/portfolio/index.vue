@@ -17,21 +17,21 @@ const { data: projects } = await useAsyncData<PortfolioProject[]>('portfolio-pro
     .all() as Promise<PortfolioProject[]>
 )
 
-const activeFilter = ref('all');
+const activeFilter = ref('todos');
 
 const categories = computed(() => {
-  if (!projects.value) return ['all'];
+  if (!projects.value) return ['todos'];
   
   const allTags = projects.value
     .flatMap(project => project.tags || [])
     .filter((tag, index, self) => self.indexOf(tag) === index);
   
-  return ['all', ...allTags];
+  return ['todos', ...allTags];
 });
 
 const filteredProjects = computed(() => {
   if (!projects.value) return [];
-  if (activeFilter.value === 'all') return projects.value;
+  if (activeFilter.value === 'todos') return projects.value;
   
   return projects.value.filter(project => 
     project.tags?.includes(activeFilter.value)
@@ -49,8 +49,6 @@ onMounted(() => {
   }, 100);
 });
 
-// Establecer título de página y descripción para SEO
-// Edita esto según tus necesidades al utilizar esta plantilla
 useHead({
   title: 'Portafolio - Mis Proyectos',
   meta: [
@@ -64,21 +62,13 @@ useHead({
     <div class="max-w-6xl mx-auto">
       <div class="mb-12 text-center relative">
         <div class="absolute inset-0 flex items-center justify-center -z-10">
-          <div class="text-9xl font-black tracking-widest opacity-10"
+          <div class="text-9xl font-black tracking-widest opacity-5"
                :style="{ color: 'var(--ui-primary)' }">PROYECTOS</div>
         </div>
 
-        <h1 class="text-5xl font-extrabold mb-6 relative portfolio-title">
-          Mi Portafolio
+        <h1 class="text-5xl font-extrabold relative portfolio-title">
+          Portafolio
         </h1>
-
-        <div class="w-24 h-1 mx-auto mb-6 rounded-full"
-             :style="{ backgroundColor: 'var(--ui-primary)' }"></div>
-
-        <p class="text-xl max-w-2xl mx-auto mb-10"
-           :style="{ color: 'var(--ui-text)' }">
-          Explora mi colección de proyectos creativos y técnicos que destacan mis habilidades y experiencia.
-        </p>
 
         <!-- Filtros de categorías -->
         <div class="flex flex-wrap justify-center gap-3 mt-8" 
